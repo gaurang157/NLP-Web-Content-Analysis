@@ -54,7 +54,7 @@ st.sidebar.link_button("NLP Compare Web Content", "https://nlp-compare-web-conte
 st.sidebar.link_button("NLP YouTube Analysis", "https://nlp-youtube-analysis.streamlit.app/",use_container_width=True)
 
 # st.sidebar.markdown("Compare any YT ▶️ with captions")
-st.sidebar.link_button("NLP Compare YouTube Videos", "https://nlp-youtube-analysis.streamlit.app/",use_container_width=True)
+st.sidebar.link_button("NLP Compare YouTube Videos", "https://nlp-compare-youtube-videos.streamlit.app/",use_container_width=True)
 if st.button("Process URLs"):
     st.write("Please be patient for Amazing Results, it will take a few minutes")
     import nltk
