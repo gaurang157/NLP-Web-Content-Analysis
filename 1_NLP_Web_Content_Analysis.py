@@ -592,6 +592,7 @@ if st.button("Process URLs"):
                     st.write(', '.join(news_item['Article Keywords']))
                     st.markdown("---")    
                 st.balloons()
+                st.cache_resource.clear()
                 # Display a horizontal bar chart for hate speech probabilities
                 # st.subheader("Hate Speech Analysis")
                 # st.bar_chart(hate_speech)
