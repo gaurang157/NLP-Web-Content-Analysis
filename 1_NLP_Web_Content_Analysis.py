@@ -364,7 +364,7 @@ if st.button("Process URLs"):
                 st.table(results_df)
                 # Open the file in read mode and read its content into a variable
                 
-                emo_in_txt = english_text
+                # emo_in_txt = english_text
                 
                 # result = multi_emotion.predict([emo_in_txt])
 
@@ -436,10 +436,16 @@ if st.button("Process URLs"):
                 # def get_analyzers():
                 #     from setup import analyzer, emotion_analyzer, hate_speech_analyzer
                 #     return analyzer, emotion_analyzer, hate_speech_analyzer
-                from my_module import get_analyzers
-                # Load analyzers
-                analyzers = get_analyzers()
                 
+                # from my_module import get_analyzers
+                # # Load analyzers
+                # analyzers = get_analyzers()
+                
+                @st.cache_resource()
+                def get_analyzers():
+                    from setup import analyzer, emotion_analyzer, hate_speech_analyzer
+                    return analyzer, emotion_analyzer, hate_speech_analyzer
+                analyzers = get_analyzers()
                 # Now you can use the analyzers for text analysis
                 sentiment1 = analyzers[0].predict(english_text)
                 emotion1 = analyzers[1].predict(english_text)
@@ -592,7 +598,7 @@ if st.button("Process URLs"):
                     st.write(', '.join(news_item['Article Keywords']))
                     st.markdown("---")    
                 st.balloons()
-                st.cache_resource.clear()
+                # st.cache_resource.clear()
                 # Display a horizontal bar chart for hate speech probabilities
                 # st.subheader("Hate Speech Analysis")
                 # st.bar_chart(hate_speech)
